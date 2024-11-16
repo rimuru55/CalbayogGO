@@ -1,0 +1,985 @@
+@media (max-width: 1280px) {
+    header {
+        align-items: center;
+    }
+    .user-logo img {
+        left: 50px;
+  }
+      .top-nav ul {
+       right: 50px;
+      }
+    .top-nav ul li {
+        text-align: center;   
+    }
+    .top-nav ul li i {
+      font-size: 1.1rem;
+  }
+    .top-nav ul li a {
+      font-size: .9rem;
+      align-items: center;
+  }
+  }
+  
+  @media (max-width: 1024px) {
+      header {
+          align-items: center;
+      }
+      .user-logo img {
+          left: 50px;
+    }
+        .top-nav ul {
+         right: 50px;
+        }
+      .top-nav ul li {
+          text-align: center;   
+      }
+      .top-nav ul li i {
+        font-size: 1.1rem;
+    }
+      .top-nav ul li a {
+        font-size: .9rem;
+        align-items: center;
+    }
+    .trendingplace{
+        left: 50px;
+        right: 50px;
+    }
+    .menu-item .dropdown {
+        left: 200px;
+        width: 200px;
+    }
+    .user-notif.show{
+        right: 70px;
+        max-width: 250px;
+    }
+}
+
+  
+/* Responsive styles for max-width 450px */
+@media (max-width: 450px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 5px 10px;
+    }
+    .user-logo img {
+        margin: 0; /* Remove positioning offsets */
+        left: 0;    
+    }
+
+    .top-nav {
+        flex-direction: row;
+        justify-content: flex-end; /* Align icons and profile menu to the right */
+    }
+
+    .top-nav ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        right: 0; /* Align to the right */
+    }
+
+    .top-nav ul li {
+        padding: 10px;
+        font-size: 1rem; /* Adjust for better visibility */
+        margin-left: 5px;
+    }
+    .map-nav-label {
+        display: none;
+    }
+    .top-nav ul li i {
+        font-size: 1.3rem;
+        display: inline-block; /* Ensure icons are displayed */
+    }
+        /* Hide the "Favorites" label specifically for small screens */
+    .index-favorites-icon .favorites-label {
+        display: none; /* Hide the label on small screens */
+    }
+
+    .notification-item .notification-text {
+        display: none; /* Hide text labels */
+    }
+
+    /* Show the icon for favorites and notifications */
+    .index-favorites-icon i,
+    .notification-item .notification-icon {
+        display: inline-block; /* Show only the icons */
+    }
+
+
+    .profile-menu{
+        height: 35px;
+        width: 35px;
+    }
+    .search-input::placeholder {
+        color: #9a9a9a;
+        font-size: .8rem;
+    }
+
+    .menu-item .dropdown {
+        position: absolute;
+        top: 100%; /* Position dropdown below the parent */
+        left: 0; /* Align dropdown to the left */
+        right: 0; /* Ensure it aligns fully */
+        background-color: #fff;
+        border-radius: 5px;
+        z-index: 2000;
+        width: 100%; /* Full width */
+    }
+
+    .menu-item .dropdown li {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .menu-item .dropdown li:last-child {
+        border-bottom: none;
+    }
+    .where {
+        top: 30px;
+        width: auto;
+    }
+    .where h1,
+    .where h3 {
+        margin: 0; /* Remove extra margins */
+        white-space: nowrap; /* Prevents line breaks within the text */
+    }
+    .where h1{
+        font-size: 1.4rem;
+    }
+    .where h3{
+        font-size: .8rem;
+        font-weight: 600;
+    }
+    
+    .search-container{
+        width: 380px;
+        top: 65px;
+        height: 40px;
+    }
+    .user-notif.show{
+        right: 15px;
+    }
+    .trendingplace{
+        top: 250px;
+        width: 85%;
+        left: 0;
+        right: 5px;
+    }
+    .trendingplace h2{
+        font-size: 1.2rem;
+    }
+    .favorite-modal{
+        max-width: 300px;
+        max-height: 400px;
+    }
+    .favorite-list-container{
+        overflow-y: auto;
+        max-height: 300px;
+    }
+    .favorite-list-item .favorite-image-placeholder {
+        width: 120px;
+        height: 80px;
+    }
+    .place-item{
+        width: 220px;
+    }
+    .place-item img{
+        height: 160px;
+    }
+    .place-item h3{
+        font-size: .9rem;
+    }
+    .place-add{
+        font-size: .8rem;
+    }
+    .span-cat{
+        font-size: .7rem;
+    }
+    .span-add{
+        font-size: .6rem;
+    }
+    .avrg-rating{
+        font-size: .8rem;
+    }
+
+    /* CSS for Display-contents */
+
+    .content-details {
+        position: relative;
+        top: 20px;
+        left: 10px;
+        right: 10px;
+        padding: 10px 20px;
+        width: 350px;
+        
+    }
+
+    .content-details h1 {
+        font-size: 1.3rem;
+    }
+
+    .price-save p,
+    .price-review p,
+    .address-review a {
+        font-size: 13px;
+    }
+
+    .save-content {
+        padding: 5px 5px;
+        font-size: 12px;
+    }
+
+    .content-img {
+        top: 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        max-height: 37%;
+    }
+
+    .cover-photo{
+        max-height: 210px;
+    }
+    .content-img img{
+        width: 100%;
+    }
+    .additional-photo:nth-child(2){
+        max-height: 100px;
+    }
+    .image-overlay {
+        height: 100px;
+        border-radius: 5px;
+    }
+
+    .content-container {
+        flex-direction: column;
+        gap: 10px;
+        top: 0;
+    }
+
+    .content-about {
+        font-size: 0.8rem;
+        width: 100%;
+    }
+    .content-about h4{
+        font-size: 1.1rem;
+
+    }
+
+    .content-amenities ul {
+        columns: 1;
+        padding: 0 10px;
+    }
+
+    /* CSS for favorite.php*/
+    .favorite-lists {
+        padding: 10px;
+        top: 80px;
+        left: 10px;
+        right: 10px;
+    }
+
+    .favorite-head h2 {
+        font-size: 1.2rem; /* Slightly smaller font size */
+    }
+
+    /* Adjust list items for smaller screens */
+    .list-items {
+        display: flex;
+        gap: 20px;
+    }
+
+    .favorite-list-items {
+        width: 180px; /* Full width for smaller screens */
+        height: auto; /* Adjust height to fit content */
+    }
+
+    /* Title font adjustments */
+    .favorite-title h3 {
+        font-size: 1rem; /* Smaller title font */
+        text-align: center;
+    }
+    .place-count {
+        font-size: 0.8rem; /* Smaller count font */
+    }
+
+    /* Adjust icon size and placement for toggle button */
+    .favorite-list-toggle {
+        font-size: 0.8rem;
+        padding: 5px;
+        top: 5px;
+        right: 5px;
+    }
+
+    /* Adjust list options dropdown for smaller screens */
+    .list-options {
+        width: auto;
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    /* Adjust image placeholder */
+    .favorite-image-placeholder {
+        height: 120px; /* Smaller image placeholder */
+    }
+    .favorite-image-placeholder img {
+        height: 120px;
+    }
+
+    /* Create New List button adjustments */
+    .create-new-list {
+        position: absolute; /* Default position for better alignment on small screens */
+        margin-top: 30px;
+        text-align: center;
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .create-new-list a {
+        font-size: 1rem;
+    }
+    .create-modal-close{
+        font-size: 2rem;
+        right: 10px;
+        position: absolute;
+        top: 0;
+    }
+
+    /* Modal adjustments */
+    .favorite-modal {
+        width: 90%; /* Make modal take up more screen space */
+        max-width: 400px;
+        height: auto;
+        max-height: 80%;
+    }
+
+    .favorite-modal-content h2, .favorite-modal-content label {
+        font-size: 1.2rem; /* Smaller modal titles */
+    }
+
+    .favorite-modal-content input {
+        font-size: 1rem;
+        padding: 8px;
+        margin-top: 10px;
+    }
+
+    .favorite-modal-content button {
+        font-size: 1rem;
+        padding: 8px 10px;
+    }
+    .favorite-list-item .favorite-title h3 {
+        font-size: .9rem;
+    }
+
+    /* Notification popup adjustments */
+    .renameNotification {
+        width: 90%;
+        top: 10px;
+        right: 5px;
+        left: 5px;
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    /* Css for next-stay.php */
+    .next-stay-container{
+        left: 10px;
+        right: 10px;
+        padding: 10px;
+        width: 380px;
+    }
+    .next-stay-container h1{
+        font-size: 1.3rem;
+    }
+    .next-stay-list{
+        max-width: 360px;
+        right: 10px;
+        left: 10px;
+        position: absolute;
+        padding: 10px;
+    }
+    .next-stay-bck{
+        position: absolute;
+        top: 30px;
+        text-decoration: none;
+        left: 10px;
+        z-index: 1000;
+    }
+    .feature-text {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .feature span {
+        font-size: .9rem;
+    }
+    
+    .feature p {
+        font-size: .8rem;
+    }
+
+        /* Next stay item container adjustments */
+        /* Next Stay Item Container Adjustments */
+    .next-stay-item {
+        display: flex;
+        flex-direction: column;
+        width: 100%; /* Full width on small screens */
+        height: auto;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+        background-color: #fff;
+        top: 60px;
+    }
+
+    /* Favorite Button Adjustments */
+    .favorite-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.2rem;
+        color: #ff5a5a;
+    }
+
+    /* Place Image Adjustments */
+    .place-image {
+        width: 90%;
+        height: 150px; /* Adjust height for better visibility */
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 0;
+    }
+
+    /* Place Details Adjustments */
+    .place-details {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .place-details h3 {
+        font-size: 1rem;
+        color: #333;
+    }
+
+    .category {
+        font-size: 0.8rem;
+        color: #666;
+        display: block;
+    }
+
+    /* Rating Circles Adjustments */
+    .stay-circles {
+        display: flex;
+    }
+
+    .next-circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #ddd;
+        margin-right: 3px;
+    }
+
+    .next-filled {
+        background-color: #0acb10;
+    }
+
+    .next-half-filled {
+        background: linear-gradient(to right, #0acb10 50%, #ddd 50%);
+    }
+
+    /* Rating and Review Count Adjustments */
+    .next-rating {
+        font-size: 0.8rem;
+        color: #666;
+    }
+
+    .next-rating-score {
+        font-weight: bold;
+    }
+
+    .next-review-count {
+        color: #999;
+        margin-left: 5px;
+    }
+
+    /* Check Details Section Adjustments */
+    .check-details {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .check-details p {
+        font-size: 0.7rem;
+        color: #666;
+    }
+
+    .check-details .btn {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        font-size: .8rem;
+        color: white;
+        background-color: #0acb10;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+        right: 10px;
+    }
+
+    .check-details .btn:hover {
+        background-color: #0b9a0c;
+    }
+    
+    /*Css for Profile.php */
+
+        /* Container Adjustments */
+    .profile-container {
+        padding: 10px;
+        width: 380px;
+        left: 10px;
+        right: 10px;
+        position: absolute;
+    }
+
+    .profile-header {
+        margin-bottom: 15px;
+    }
+
+    /* Profile Image */
+    .profile-img img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-header h1 {
+        font-size: 1.2rem;
+        margin: 8px 0 3px;
+    }
+
+    .profile-header p {
+        font-size: 0.8rem;
+    }
+
+    /* Profile Navigation Tabs */
+    .profile-nav {
+        gap: 10px;
+        padding: 0;
+    }
+
+    .profile-nav .tab {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    /* Profile Info and Settings */
+    .profile-info {
+        margin-bottom: 15px;
+    }
+
+    .profile-stats {
+        gap: 10px;
+
+    }
+
+    .profile-settings {
+        border: none;
+        padding: 5px;
+    }
+
+    .profile-settings button {
+        font-size: 0.7rem;
+        padding: 5px;
+    }
+
+    .profile-settings i {
+        font-size: 1rem;
+    }
+
+    /* Modal Styling */
+    .edit-profile-modal {
+        padding: 0;
+    }
+
+    .profile-modal-content {
+        width: 90%;
+        max-width: 350px;
+        padding: 20px;
+        margin: 10% auto;
+    }
+
+    .profile-modal-content h2 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .profile-image-section {
+        margin-bottom: 15px;
+    }
+
+    .profile-image-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .change-photo-overlay i {
+        font-size: 0.9rem;
+    }
+
+    .change-photo-overlay span {
+        font-size: 0.7rem;
+    }
+
+    .profile-modal-content label {
+        font-size: 0.8rem;
+    }
+
+    .profile-modal-content input[type="text"],
+    .profile-modal-content input[type="file"] {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+
+    .prof-modal-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .prof-cancel-button,
+    .prof-save-button {
+        width: 100%;
+        padding: 8px;
+    }
+
+    /* User Feed */
+    .user-feed {
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    .user-feed h2 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .review-item {
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+
+    .review-item h4 {
+        font-size: 0.9rem;
+    }
+
+    .review-item p {
+        font-size: 0.8rem;
+    }
+
+    /* User Photos */
+    #photos img.review-photo {
+        width: 80px;
+        height: 80px;
+        margin: 4px;
+    }
+
+    /* Tab Content Adjustments */
+    .tab-content {
+        padding: 15px;
+    }
+
+    /* Font Size Adjustments for Labels and Inputs */
+    .profile-modal-content label,
+    .profile-modal-content input {
+        font-size: 0.8rem;
+    }
+    .between{
+        gap: 20px;
+    }
+
+    /*CSS for login*/
+    .right-link{
+        color: #0acb10;
+    }
+    .already a{
+        color: #0acb10;
+    }
+    .index-map {
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 85%; /* Adjust width to fit small screens */
+        height: 700px; /* Make height auto to avoid overflow */
+    }
+    .custom-map-search-container, .results-container {
+        max-width: 100%; /* Ensure these containers fit the adjusted map width */
+    }
+}
+
+
+/* Responsive styles for max-width 450px */
+@media (max-width: 380px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 5px 10px;
+    }
+    .user-logo img {
+        margin: 0; /* Remove positioning offsets */
+        left: 0;    
+    }
+    .map-nav-label {
+        display: none;
+    }
+    .top-nav {
+        flex-direction: row;
+        justify-content: flex-end; /* Align icons and profile menu to the right */
+    }
+
+    .top-nav ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        right: 0; /* Align to the right */
+    }
+
+    .top-nav ul li {
+        padding: 10px;
+        font-size: 1rem; /* Adjust for better visibility */
+        margin-left: 5px;
+    }
+
+    .top-nav ul li i {
+        font-size: 1.1rem;
+        display: inline-block; /* Ensure icons are displayed */
+    }
+    .trendingplace{
+        top: 250px;
+        width: 83%;
+        left: 0;
+        right: 5px;
+    }
+    .trendingplace h2{
+        font-size: 1.1rem;
+    }
+    .search-container{
+        width: 330px;
+    }
+    .content-details{
+        width: 83%;
+    }
+    .content-details h1 {
+        font-size: 1.1rem;
+    }
+    .price-save p,
+    .price-review p,
+    .address-review a {
+        font-size: 12px;
+    }
+    .rating-review{
+        width: 83%;
+    }
+    .display-rating{
+        width: 83%;
+    }
+    .rating-summary{
+        width: 300px;
+    }
+    .user-reviews{
+        width: 300px;
+    }
+    .map-search-container {
+        max-width: 300px;
+    }
+    .favorite-list-items{
+        width: 150px;
+    }
+        /* Title font adjustments */
+    .favorite-title h3 {
+        font-size: .8rem; /* Smaller title font */
+        text-align: center;
+    }
+    .next-stay-container{
+        width: 330px;
+    }
+    .next-stay-list{
+        max-width: 310px;
+    }
+    .profile-container {
+        padding: 10px;
+        width: 340px;
+        left: 10px;
+        right: 10px;
+        position: absolute;
+    }
+    .profile-nav .tab {
+        font-size: 0.7rem;
+        padding: 8px;
+    }
+    .profile-settings button {
+        font-size: 0.6rem;
+        padding: 5px;
+    }
+    .index-map {
+        padding: 10px 15px; /* Slightly reduce padding */
+    }
+    .custom-map-search-container, .results-container {
+        width: calc(100% - 10px); /* Adjust width to ensure no overflow */
+    }
+}
+
+/* Responsive styles for max-width 450px */
+@media (max-width: 325px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 5px 10px;
+    }
+    .user-logo img {
+        margin: 0; /* Remove positioning offsets */
+        left: 0;    
+    }
+    .map-nav-label {
+        display: none;
+    }
+    .top-nav {
+        flex-direction: row;
+        justify-content: flex-end; /* Align icons and profile menu to the right */
+    }
+
+    .top-nav ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        right: 0; /* Align to the right */
+    }
+
+    .top-nav ul li {
+        padding: 10px;
+        font-size: 1rem; /* Adjust for better visibility */
+        margin-left: 5px;
+    }
+
+    .top-nav ul li i {
+        font-size: 1.1rem;
+        display: inline-block; /* Ensure icons are displayed */
+    }
+    .trendingplace{
+        top: 250px;
+        width: 82%;
+        left: 0;
+        right: 5px;
+    }
+    .trendingplace h2{
+        font-size: 1rem;
+    }
+    .filter-icon {
+        font-size: 1.2rem;
+        color: #353535;
+        cursor: pointer;
+    }
+    .filter-option {
+        font-size: .8rem;
+    }
+    .favorite-list-item .favorite-image-placeholder {
+        width: 100px;
+        height: 80px;
+    }
+    .search-container{
+        width: 290px;
+    }
+    .place-item{
+        width: 220px;
+    }
+    .place-item img{
+        height: 160px;
+    }
+    .content-details{
+        width: 83%;
+    }
+    .content-details h1 {
+        font-size: 1.1rem;
+    }
+    .price-save p,
+    .price-review p,
+    .address-review a {
+        font-size: 12px;
+    }
+    .rating-review{
+        width: 83%;
+    }
+    .display-rating{
+        width: 83%;
+    }
+    .rating-summary{
+        width: 240px;
+    }
+    .user-reviews{
+        width: 240px;
+    }
+    .map-search-container {
+        max-width: 250px;
+    }
+    .favorite-list-items{
+        width: 130px;
+    }
+        /* Title font adjustments */
+    .favorite-title h3 {
+        font-size: .8rem; /* Smaller title font */
+        text-align: center;
+    }
+    .next-stay-container{
+        width: 260px;
+    }
+    .next-stay-list{
+        max-width: 260px;
+    }
+    .profile-container {
+        padding: 10px;
+        width: 280px;
+        left: 10px;
+        right: 10px;
+        position: absolute;
+    }
+    .profile-nav .tab {
+        font-size: 0.7rem;
+        padding: 8px;
+    }
+    .profile-settings button {
+        font-size: 0.6rem;
+        padding: 5px;
+    }
+    .profile-modal-content{
+        width: 80%;
+    }
+    .index-map {
+        padding: 5px; /* Minimal padding for smallest screens */
+    }
+    .custom-map-search-container, .results-container {
+        width: calc(100% - 5px); /* Adjust width to ensure no overflow */
+    }
+}
+
+
+  /* Optional: Adjust styles for smaller screens if needed */
+@media screen and (max-width: 600px) {
+    .notification-icon {
+        font-size: 20px; /* Reduce size if the bell icon looks too large on smaller screens */
+    }
+    
+    .notification-dot {
+        top: -3px; /* Adjust dot position slightly for better alignment on smaller screens */
+        right: -3px;
+    }
+}

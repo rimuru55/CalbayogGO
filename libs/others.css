@@ -1,0 +1,537 @@
+
+.favorite-lists {
+    position: absolute;
+    padding: 10px 35px;
+    top: 100px;
+    max-width: 1000px; /* Limit the maximum width of the content */
+    left: 250px;
+    right: 250px;
+}
+
+.favorite-head {
+    margin-bottom: 20px;
+}
+
+.list-items {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for responsiveness */
+    gap: 20px;
+    justify-content: flex-start;
+}
+/* Ensure favorite list items have proper width */
+.favorite-list-items {
+    position: relative;
+    height: 180px;
+    width: 220px;
+    border-radius: 10px;
+    display: flex; 
+    margin: 10px 0px;
+    padding-bottom: 15px;
+    flex-direction: column;
+}
+
+.favorite-title h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    position: absolute;
+    width: 100%;
+    padding: 10px 0;
+}
+.place-count {
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+
+/* Toggle button appears on hover */
+.favorite-list-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+    padding: 8px;
+    background-color: #ebebeb;
+    border-radius: 5px;
+    /* Remove this line to ensure the button is always visible */
+    display: block;
+}
+
+.favorite-list-toggle i {
+    font-size: 20px;
+}
+
+.favorite-list-items:hover .favorite-list-toggle {
+    display: block; /* Remove this line to make the button permanently visible */
+}
+
+.favorite-list-toggle:hover {
+    background-color: #b0b0b0;
+    color: #000;
+}
+
+/* Hidden list options */
+.list-options {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 10;
+}
+
+.list-options a,
+.list-options button {
+    display: block;
+    font-size: 14px;
+    padding: 5px;
+    text-decoration: none;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.list-options a:hover,
+.list-options button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Styling for edit and delete buttons */
+.list-options .edit-btn .delete-btn {
+    color: #000000;
+}
+
+.delete-form {
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+
+
+.favorite-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.favorite-image-placeholder {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden; /* Ensure image doesn't overflow */
+    background-color: #f0f0f0;
+}
+.favorite-image-placeholder:hover{
+    background-color: #ebebeb;
+}
+
+.favorite-image-placeholder img {
+    max-width: 100%; /* Ensure image fits within the container */
+    height: 195px; /* Maintain the aspect ratio */
+    border-radius: 10px;
+    flex-grow: 1; /* Ensure the image takes up available space */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.favorite-image-placeholder i {
+    font-size: 48px;
+    color: #b0b0b0;
+}
+
+/* Adjust the Create New List button position */
+.create-new-list {
+    margin-top: 20px;
+    background-color: #0ACB10;
+    position: absolute;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.create-new-list a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.create-new-list:hover {
+    background-color: #FAE534;
+}
+
+.create-new-list a:hover {
+    color: #333;
+}
+
+
+/* Modal styling */
+/* Favorite Modal Styling */
+.favorite-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-height: 600px;
+}
+
+
+.favorite-modal-content {
+    padding: 20px;
+    position: relative;
+}
+
+.favorite-modal-content h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 40px;
+    text-align: left;
+}
+.favorite-modal-content label {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+/* Favorite list items inside modal */
+.favorite-list-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.favorite-list-container{
+    overflow-y: auto;
+    max-height: 400px;
+}
+.favorite-list-container::-webkit-scrollbar {
+    width: 8px;
+    background-color: #f0f0f0; /* Background color of the scrollbar track */
+    border-radius: 10px;
+}
+
+.favorite-list-container::-webkit-scrollbar-thumb {
+    background-color: #ccc; /* Color of the scrollbar handle */
+    border-radius: 10px;
+    border: 2px solid #f0f0f0; /* Space between thumb and track */
+}
+
+.favorite-list-container::-webkit-scrollbar-thumb:hover {
+    background-color: #999; /* Darker on hover */
+}
+
+.favorite-list-item:hover {
+    background-color: #f9f9f9;
+}
+
+.favorite-list-item .favorite-image-placeholder {
+    width: 180px;
+    height: 100px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b0b0b0;
+    margin-right: 15px;
+}
+
+.favorite-list-item .favorite-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.favorite-list-item .favorite-title h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    position: relative;
+}
+
+.favorite-list-item .place-count {
+    font-size: 0.8rem;
+    color: #777;
+    font-weight: 500;
+}
+
+/* Close button styling */
+.favorite-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 10;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+.favorite-close:hover,
+.favorite-close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.favorite-modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.favorite-modal-content button {
+    padding: 10px 15px;
+    background-color: #0ACB10;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.favorite-modal-content button:hover {
+    background-color: #FAE534;
+}
+
+/* Simple notification popup styling */
+.renameNotification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745; /* Success color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.renameNotification.error {
+    background-color: #dc3545; /* Error color */
+}
+
+
+/* CSS for next-stay */
+
+/* CSS for next-stay */
+
+.next-stay-container{
+    position: relative;
+    top: 50px;
+    left: 250px;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.next-stay-container h1 {
+    font-weight: 700;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Feature styling */
+.next-stay-features {
+    display: flex;
+    flex-direction: column; /* Can be row or column depending on layout */
+    gap: 20px;
+    width: 100%;
+}
+
+.feature {
+    display: flex;
+    align-items: center; /* Aligns icon and text vertically */
+    gap: 15px; /* Adds space between the icon and text */
+    padding-bottom: 10px;
+
+}
+
+.feature-icon{
+    padding: 10px;
+    background-color: #ececec;
+    border-radius: 50px;
+}
+.feature i {
+    font-size: 17px;
+    color: #000000;
+}
+
+.feature-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature span {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.feature p {
+    font-size: 16px;
+    color: #000000;
+    margin: 0;
+}
+
+/* Button styling */
+.search-stays-btn {
+    margin-top: 30px;
+}
+
+.search-stays-btn .btn-primary {
+    background-color: #0ACB10;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.search-stays-btn .btn-primary:hover {
+    background-color: #FAE534;
+    color: #000;
+}
+
+.next-stay-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    top: 50px;
+    width: 1000px;
+    left: 250px;
+    right: 250px;
+    padding: 10px 30px;
+}
+.next-stay-bck{
+    text-decoration: none;
+}
+.next-stay-bck i{
+    color: #000000; 
+    font-size: 1.2rem;
+    
+}
+
+.next-stay-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.place-image {
+    width: 200px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.place-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.place-details h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.category {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+
+.favorite-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.favorite-button i {
+    color: #4CAF50; /* Initially filled with green color for saved places */
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.favorite-button:hover i {
+    color: #FAE534; /* Green when saved */
+}
+
+.stay-circles{
+    display: flex;
+    gap: 5px;
+    margin: 10px 0;
+}
+.next-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+.next-filled {
+    background-color: #128c20;
+}
+
+.next-half-filled {
+    background-color: #128c20;
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+}
+.check-details {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.check-details .btn {
+    background-color: #128c20;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: color 0.3s ease;
+}
+
+.check-details .btn:hover {
+    background-color: #FAE534;
+}

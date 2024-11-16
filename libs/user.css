@@ -1,0 +1,1416 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+nav {
+    width: 100%; /* Ensure the nav spans the full width */
+    padding: 0; /* Remove any default padding */
+}
+a{
+    color: inherit;
+}
+header {
+    width: 100%; /* Ensure header spans the full width */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Spread items evenly */
+    padding: 10px 20px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.user-logo img {
+    position: relative;
+    width: 160px;
+    height: auto;
+    left: 250px;
+}
+
+.menu-item{
+    display: flex;
+    align-items: center;
+}
+
+.profile-menu{
+    width: 25px;
+    height: 25px;
+}
+.profile-menu img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.profile-menu .dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 215px;
+    background-color: #ffffff;
+    flex-direction: column;
+    width: 180px;
+    border-radius: 8px;
+}
+
+.profile-menu:hover .dropdown {
+    display: block;
+}
+
+.top-nav {
+    display: flex;
+    align-items: center;
+}
+
+.top-nav ul {
+    position: relative;
+    list-style-type: none;
+    display: flex;
+    right: 250px;
+}
+
+.fav-menu{
+    display: flex;
+    align-items: center;
+}
+.top-nav.active ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333;
+}
+
+.top-nav ul li {
+    padding: 17px;
+}
+
+.top-nav ul li:hover {
+    background-color: #d7d7d7;
+}
+
+.top-nav ul li i {
+    font-size: 1.5rem;
+}
+
+.top-nav ul li a {
+    font-size: .9rem;
+    display: inline;
+    padding: 5px;
+    text-decoration: none;
+    align-items: center;
+    color: inherit; /* Inherit color for better consistency */
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu-item .dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 240px;
+    background-color: #ffffff;
+    flex-direction: column;
+    width: 200px;
+    border-radius: 8px;
+    
+}
+
+.dropdown{
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Add shadow */
+    z-index: 3; /* Ensure dropdown is above other content */
+    position: sticky;
+}
+
+.dropdown li {
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+
+
+/* Search Bar CSS */
+
+.search-box-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    top: 30px;
+    width: 100%;
+}
+
+.search-container {
+    position: relative;
+    top: 110px;
+    width: 700px;
+    height: 50px;
+}
+
+.search-container-content{
+    position: relative;
+    top: 50px;
+    width: 700px;
+    height: 50px;
+}
+
+.where {
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    text-align: center;
+}
+
+
+.search-icon {
+    position: absolute;
+    left: 10px; /* Space from the left edge */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000000;
+    font-size: 20px; /* Adjust size as needed */
+    pointer-events: none; /* Allow clicks to pass through the icon */
+    z-index: 2; /* Ensure the icon is above the input */
+}
+
+.search-input {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    padding: 10px;
+    padding-left: 40px; /* Extra padding to make room for the icon */
+    padding-right: 80px; /* Extra padding to make room for the button */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    z-index: 1; /* Ensure the input is below the icon */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+.search-input::placeholder {
+    color: #9a9a9a;
+    font-size: 16px;
+    text-align: center; /* Center align text horizontally */
+    line-height: 40px; /* Match this with the input height for vertical centering */
+}
+
+.search-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid #ccc;
+    border-left: none;
+    background-color: #0acb10;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 30px; /* Match the height of the input */
+    width: 70px; /* Adjust width as needed */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    z-index: 2; /* Ensure the button is above the input */
+}
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none; /* Hidden by default */
+}
+
+.search-suggestion {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.search-suggestion:last-child {
+    border-bottom: none;
+}
+
+.search-suggestion:hover {
+    background-color: #eeeeee;
+}
+
+.search-suggestion a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    width: 100%;
+}
+
+.suggestion-image {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+}
+
+.suggestion-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.suggestion-info {
+    flex-grow: 1;
+}
+
+.suggestion-info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+.suggestion-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #555;
+    font-weight: 400;
+}
+
+
+/* Trending Place CSS */
+.trendingplace {
+    position: absolute;
+    top: 330px;
+    left: 250px;
+    padding: 10px 30px;
+    right: 250px;
+}
+
+.trendingplace h2 {
+    position: relative;
+    bottom: 20px;
+}
+
+.place-list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding-bottom: 10px; /* Space for scrollbar */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+/* Hide the default scrollbar for a cleaner look */
+.place-list::-webkit-scrollbar {
+    display: none;
+}
+
+.trending-nav-button {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #5f5f5f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    z-index: 1000;
+    padding: 0; /* Remove padding for accurate click area */
+}
+
+.trending-nav-button.left {
+    left: 10px; /* Adjusted for more spacing from the edge */
+}
+
+.trending-nav-button.right {
+    right: 10px; /* Adjusted for more spacing from the edge */
+}
+
+
+
+.place-item {
+    flex: 0 0 auto; /* Prevent items from shrinking */
+    border-radius: 20px;
+    position: relative;
+    width: 250px;
+    max-height: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.favorite {
+    width: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.favorite a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.favorite i {
+    font-size: 1.1rem;
+}
+
+.place-item img {
+    height: 190px;
+    max-width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.place-item a {
+    color: #127700;
+}
+
+.place-item h3 {
+    padding: 10px 0 5px 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.place-add{
+    font-size: .7rem;
+}
+
+.span-cat {
+    font-size: .8rem;
+    font-weight: 500;
+}
+.span-add{
+    font-size: .7rem;
+}
+.filter-container {
+    position: absolute;
+    top: 0;
+    right: 30;
+    display: flex;
+    align-items: center;
+}
+
+.filter-icon {
+    font-size: 1.5rem;
+    color: #353535;
+    cursor: pointer;
+}
+
+.filter-dropdown {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #fff;
+    border: #6a6a6a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1001;
+    width: 200px;
+}
+
+.filter-option {
+    padding: 8px;
+    font-size: .9rem;
+    font-weight: 500;
+    color: #353535;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.filter-option:hover {
+    background-color: #c7c7c7;
+}
+
+
+/* Display Content Css */
+.content-details{
+    position: absolute;
+    top: 100px;
+    left: 250px;
+    padding: 10px 20px;
+    right: 250px;
+}
+
+.content-details h1{
+    font-size: 35px;
+}
+
+.price-save {
+    padding: 10px 0 10px 0;
+    display: flex;
+    align-items: center; /* Aligns items vertically */
+    justify-content: space-between; /* Distributes space between the elements */
+}
+
+.price-save p {
+    margin: 0; /* Removes default margin from the paragraph */
+    font-size: 18px; /* Adjust this value as needed */
+}
+
+.title-save, .price-review, .address-review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.title-save h1, .price-review p, .address-review a {
+    margin: 0;
+}
+  
+.save-content {
+    border: 1px solid black; /* Black border */
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+  
+.save-content i {
+    margin-right: 5px;
+    color: #128c20;
+}
+
+.save-content:hover{
+    background-color: #f7f7f7;
+}
+  
+.price-rating span {
+    color: black;
+    padding: 5px 10px;
+}
+
+.content-img {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Two columns: cover photo takes more space */
+    grid-template-rows: repeat(2, 1fr); /* Two rows, equal height */
+    grid-gap: 10px; /* Spacing between images */
+    height: 350px;
+}
+
+.content-img img {
+    width: 100%;
+    height: 350px; /* Ensures the image covers the entire grid area */
+    object-fit: cover;
+    border-radius: 10px; /* To match the rounded corners */
+}
+
+.cover-photo {
+    grid-column: 1 / 2; /* Cover photo spans the first column */
+    grid-row: 1 / 3; /* Cover photo spans both rows */
+    height: 350px; /* Makes sure it fits within the 300px height */
+}
+
+.additional-photo:nth-child(2) {
+    grid-column: 2 / 3; /* First additional photo spans the second column */
+    grid-row: 1 / 2; /* Position it in the first row */
+    height: 170px; /* Makes sure it fits within the 300px height */
+}
+
+.image-overlay {
+    position: relative;
+    grid-column: 2 / 3; /* Second additional photo spans the second column */
+    grid-row: 2 / 3; /* Position it in the second row */
+    height: 170px; /* Makes sure it fits within the 300px height */
+}
+
+.image-overlay img {
+    width: 100%;
+    height: 100%; /* Ensures the image covers the entire grid area */
+    object-fit: cover;
+    border-radius: 10px; /* Match the border radius */
+}
+
+.image-count-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ensures the overlay covers the entire image */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.content-container {
+    position: relative;
+    top: 20px;
+    display: flex;
+    gap: 20px; /* Space between the description and the map */
+}
+
+.content-about {
+    font-size: .9rem;
+    height: auto;
+    flex: 1;
+    width: 500px;
+    text-align: justify;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc; /* Bottom border */
+    box-shadow: 0px 5px 4px -4px rgba(0, 0, 0, 0.3); /* Bottom shadow */
+}
+.content-about h4{
+    padding: 0 0 10px 0;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.content-map {
+    height: auto; /* Adjust the height as needed */
+    width: 400px; /* Ensure the map fills the container */
+    border-radius: 10px; /* Optional: Add rounded corners to the map */
+}
+
+.content-amenities {
+    margin-top: 20px;
+}
+
+.content-amenities h5 {
+    font-weight: 550;
+    margin-bottom: 10px;
+    font-size: .85rem;
+}
+
+.content-amenities ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    list-style: none;
+    padding: 0 30px;
+}
+
+.content-amenities ul li {
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+}
+ 
+/* Ratings CSS */
+.rating-review{
+    position: relative;
+    top: 70px;
+}
+.display-rating {
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* Align items left and right */
+    gap: 20px; /* Add some space between the two sections */
+}
+.rating-review h4{
+    padding: 0 0 10px 0;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.rating-summary {
+    padding: 10px;
+    text-decoration: none;
+}
+.average-rating{
+    display: flex;
+    gap: 10px;
+}
+.average-rating h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.circles {
+    display: flex;
+    align-items: center;
+}
+
+.circles .circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(185, 185, 185);
+    margin-right: 5px;
+}
+
+.circles .filled {
+    background-color: #128c20;
+}
+
+.circles span:last-child {
+    margin-left: 10px;
+}
+
+.price-review p:last-child {
+    margin-left: 10px;
+}
+.circles .half-filled:after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #128c20;
+    position: absolute;
+    clip: rect(0, 5px, 10px, 0);
+}
+.rating-breakdown {
+    margin-top: 10px;
+}
+
+.rating-bar {
+    display: flex;
+    align-items: center;
+}
+
+.rating-bar .label {
+    width: 85px;
+    font-size: .9rem;
+}
+
+.rating-bar .bar {
+    flex: 1;
+    height: 10px;
+    background-color: #eee;
+    position: relative;
+    border-radius: 50px;
+}
+
+.rating-bar .bar span {
+    display: block;
+    height: 100%;
+    background-color: #128c20;
+    border-radius: 10px;
+}
+
+.rating-bar .count {
+    width: 30px;
+    text-align: right;
+    font-size: .9rem;
+}
+
+/* Modal Background */
+.custom-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form Styles */
+.custom-modal form {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-modal label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.custom-modal textarea {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.rating-btn {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #128c20;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.user-reviews {
+    flex: 2.2;
+    margin-top: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.prof-reviews {
+    display: flex;
+    align-items: center; /* Align image and text vertically */
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.prof-image-wrapper {
+    width: 40px;
+    height: 40px;
+    overflow: hidden; /* Ensures the image fits within the circular frame */
+    border-radius: 50%; /* Rounds the image */
+}
+
+.prof-reviews img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Removes any extra spacing */
+}
+
+.prof-reviews strong {
+    margin-left: 10px; /* Adds spacing between image and text */
+    font-weight: 600;
+    top: 0;
+    font-size: 1rem;
+}
+
+.each-review p{
+    margin-top: 10px;
+    font-size: .9rem;
+}
+.user-reviews ul {
+    list-style-type: none;
+    padding: 10px;
+}
+.user-reviews li {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc; /* Bottom border */
+    box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.3); /* Bottom shadow */
+}
+.each-review span{
+    font-size: .7rem;
+}
+.each-review small{
+    font-size: .7rem;
+}
+
+.review-rating {
+    display: flex;
+    align-items: center;
+}
+
+.review-rating .circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin-right: 2px;
+}
+
+.review-rating .circle.filled {
+    background-color: gold;
+}
+
+.review-photos {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center; /* Ensure images are vertically aligned */
+}
+.review-image {
+    width: 150px; /* Adjust the size as needed */
+    height: 120px;
+    border-radius: 5px;
+}
+.review-photo {
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0; /* Prevents images from shrinking */
+}
+
+.photo-count-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+
+/*MAP Css*/
+.index-map{
+    position: relative;
+    left: 250px;
+    width: 1100px;
+    padding: 10px 30px;
+    top: 30px;
+    height: 700px;
+}
+
+#map {
+    position: absolute; /* Allows precise positioning */
+    top: 0;
+    bottom: 0;
+    border-radius: 15px;
+    width: 100%;
+}
+.custom-map-search-container{
+    position: absolute;
+    z-index: 1001;
+    top: 5px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    gap: 5px;
+}
+.custom-map-search-form {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    margin-left: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Keeps children elements inside the rounded border */
+    width: 100%;
+}
+
+.custom-map-search-input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    outline: none; /* Removes the outline on focus */
+}
+
+.custom-map-search-button {
+    background: #0acb10; /* Google blue */
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: white;
+}
+.custom-map-planner {
+    background: #0acb10; /* Google blue */
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: white;
+    border-radius: 10px;
+}
+.custom-search-icon {
+    font-family: Arial, sans-serif; /* This is for demonstration, replace with your icon font if needed */
+    font-size: 16px;
+}
+
+.custom-map-search-input:focus,
+.custom-map-search-button:focus {
+    outline: none; /* Further ensures no focus outline */
+}
+.results-container{
+    position: absolute;
+    z-index: 1001;
+    top: 50px;
+    background-color: white;
+    margin-left: 5px;
+    border-radius: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 400px;
+    width: 400px;
+}
+.result-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.result-item-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px; /* Space between image and text */
+    width: 90%;
+}
+
+.result-item-image {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.result-item-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.result-item-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.result-item-address {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0 10px 0; /* Margin to space out the button below */
+}
+
+.add-to-planner-btn {
+    background-color: #0acb10;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    right: 0;
+    max-width: 100%;
+    position: relative;
+}
+
+.add-to-planner-btn:hover {
+    background-color: #099a0e;
+}
+
+
+.custom-destination-planner {
+    display: none; /* Hidden by default */
+    position: absolute;
+    left: 30px;
+    top: 50px;
+    width: 80%;
+    max-width: 300px;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.custom-destination-planner h2 {
+    font-size: 16px; /* Smaller font size for the title */
+    color: #333; /* Dark grey color for the text */
+    margin-bottom: 12px;
+}
+
+.planner-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto; /* Allows scrolling */
+}
+
+.planner-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-bottom: 1px solid #ccc; /* Light grey border */
+}
+
+.planner-item:last-child {
+    border-bottom: none; /* Removes border from the last item */
+}
+.order_button{
+    display: flex;
+}
+.planner-item button {
+    background: #0056b3; /* Adjusted button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 6px 12px;
+    display: flex;
+}
+
+.planner-item button:hover {
+    background: #00397a; /* Darker blue on hover */
+}
+/* Profile.php */
+
+.profile-container {
+    padding: 10px 20px;
+    text-align: center;
+    right: 250px;
+    left: 250px;
+    position: absolute;
+    width: 1000px;
+}
+
+.profile-header {
+    margin-bottom: 20px;
+}
+
+.profile-img img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-header h1 {
+    font-size: 24px;
+    margin: 10px 0 5px;
+}
+
+.profile-header p {
+    font-size: 14px;
+    color: gray;
+}
+
+.profile-info {
+    margin-bottom: 20px;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Center vertically if needed */
+    margin-bottom: 10px;
+}
+
+.profile-stats span {
+    font-size: 14px;
+}
+.profile-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.profile-nav .tab {
+    text-decoration: none;
+    padding: 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #909090;
+    position: relative;
+}
+
+.profile-nav .tab.active {
+    color: #127700; /* Active tab color */
+}
+
+.profile-nav .tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0acb10; /* Active underline color */
+}
+
+.tab-content {
+    display: none; /* Hide content by default */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.tab-content.active {
+    display: block; /* Show active tab content */
+}
+
+.profile-settings{
+    background-color: #ffffff;
+    border: #000 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+}
+.profile-settings button {
+    margin-left: auto; /* Push button to the right */
+    cursor: pointer;
+    font-size: .8rem;
+    background-color: #ffffff;
+    border: #ffffff;
+}
+.profile-settings i{
+    font-size: 1rem;
+}
+
+/* Modal Styling */
+.edit-profile-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.profile-modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    position: relative;
+}
+
+.profile-modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.profile-image-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-image-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.change-photo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.65); /* Slightly darker for better readability */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 10;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.change-photo-overlay i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem; /* Larger icon size */
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.change-photo-overlay span {
+    font-size: .8rem; /* Adjusted text size */
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.profile-image-wrapper:hover .change-photo-overlay {
+    opacity: 1;
+}
+
+.profile-modal-content label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.profile-modal-content input[type="text"],
+.profile-modal-content input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.prof-modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.prof-cancel-button,
+.prof-save-button {
+    width: 48%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.prof-cancel-button {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.prof-cancel-button:hover {
+    background-color: #e5e5e5;
+}
+
+.prof-save-button {
+    background-color: #128c20;
+    color: #fff;
+    border: none;
+}
+
+.prof-save-button:hover {
+    background-color: #333;
+}
+
+.user-close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+/* User Feed Styling */
+.user-feed {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.user-feed h2 {
+    margin-bottom: 10px;
+}
+
+.review-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.review-item h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.review-item p {
+    margin: 5px 0;
+}
+
+/* User Photos */
+
+/* Style for review photos in the Photos tab */
+#photos img.review-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 5px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+#photos img.review-photo:hover {
+    transform: scale(1.1);
+}
+
+/* Popup message styling */
+.popup-message {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    padding: 15px 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    font-size: .8rem;
+    z-index: 1001;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    width: 250px;
+}
+
+.popup-message.show {
+    display: block;
+    opacity: 1;
+}
+
+.popup-message.success {
+    background-color: #28a745; /* Green for success */
+}
+
+.popup-message.error {
+    background-color: #dc3545; /* Red for error */
+}

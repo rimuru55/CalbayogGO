@@ -1,0 +1,196 @@
+.user-notif {
+    display: none;
+    position: absolute;
+    top: 60px;  /* Adjust to fit under the notification icon */
+    right: 250px;  /* Position properly across both interfaces */
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 300px;  /* Set consistent width */
+    padding: 10px;
+    border-radius: 8px;
+    overflow-y: auto;
+    max-height: 300px;  /* Limit height, add scrolling */
+}
+
+
+.user-notif.show {
+    display: block;
+}
+
+.dropdown-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.announcement-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.announcement-item:last-child {
+    border-bottom: none;
+}
+
+.announcement-cover-photo {
+    flex: 0 0 50px; /* Fixed width for cover photo container */
+    height: 50px;
+    margin-right: 15px;
+}
+
+.announcement-cover-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Makes the cover photo circular */
+}
+
+.announcement-details {
+    flex-grow: 1;
+    overflow: hidden; /* Ensure long details do not overflow the container */
+}
+
+.announcement-title {
+    font-weight: bold;
+    margin-bottom: 2px;
+    font-size: 0.9rem;
+    word-wrap: break-word; /* Ensures long titles wrap to the next line */
+    line-height: 1.2em;
+    overflow: hidden; /* Prevents long text from overflowing */
+}
+
+.announcement-place {
+    display: block;
+    color: #666;
+    font-size: 0.7rem;
+    margin-bottom: 5px;
+}
+
+.announcement-message {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+    line-height: 1.2em;
+    max-width: 100%; /* Limit the message width */
+
+}
+
+.announcement-time {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    font-size: 0.7rem;
+    color: #707070;
+}
+
+
+
+/* Modal styling */
+.announce-modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.announce-modal-content {
+    border-radius: 10px;
+    margin: 10% auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Centered Image Container */
+.announcement-image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.announce-modal img {
+    max-height: 300px;
+    max-width: 300px;
+    object-fit: fill;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.announce-place{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+#announcement-modal-message{
+    font-size: .9rem;
+    text-align: justify;
+}
+#announcement-modal-title{
+    margin-top: 15px;
+}
+
+
+/* Centered Buttons Container */
+.announcement-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.announce-modal button {
+    background-color: #FAE534;
+    padding: 10px;
+    border: #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+/* Style for the container of the notification item */
+.notification-item {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Notification icon wrapper */
+.notification-icon {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style for the red notification dot */
+.notification-dot {
+    position: absolute;
+    top: -5px;  /* Position above the bell icon */
+    right: -5px; /* Position to the right of the bell icon */
+    height: 10px;  /* Size of the red dot */
+    width: 10px;   /* Size of the red dot */
+    background-color: red;  /* Red color for the dot */
+    border-radius: 50%;  /* Make it a circle */
+    display: none;  /* Hidden initially, JavaScript will control its visibility */
+    pointer-events: none; /* Ensure the red dot does not block clicks */
+}
+.notification-icon-text-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* This ensures the cursor changes to indicate it's clickable */
+}
+

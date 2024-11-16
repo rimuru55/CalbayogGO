@@ -1,0 +1,952 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Login container */
+h2 {
+  padding: 0px 0px 10px 0px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 5px;
+}
+
+a:hover {
+  color: #0ACB10; /* Change the color on hover */
+}
+
+/* Image styles */
+.logo {
+  width: 200px;
+  height: 80px;
+}
+.span {
+	font-size: 12px;
+  padding-bottom: 10px;
+}
+span{
+  font-size: 14px;
+}
+
+/* Form styles */
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.form {
+  text-align: center;
+  width: 100%;
+  max-width: 400px; /* Limits the form width */
+}
+.sign-up-form {
+  text-align: center;
+  width: 100%;
+  max-width: 400px; /* Limits the form width */
+}
+
+.signup {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+/* Input group styles */
+.input-group {
+  position: relative;
+  margin-bottom: 10px; /* Added margin bottom for spacing */
+}
+
+.input {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid;
+  max-width: 400px;
+  border-radius: 5px;
+}
+
+.placeholder {
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  font-size: 14px;
+  padding: 0px 5px;
+  color: #666;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.input:focus + .placeholder, .input:not(:placeholder-shown) + .placeholder {
+
+  background-color: #fff;
+}
+
+.placeholder.active {
+  top: -10px;
+  background-color: #fff;
+}
+
+
+/* Link container styles */
+.link-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0; /* Adjusted margin for spacing */
+}
+
+.left-link {
+  text-align: left;
+}
+
+.right-link {
+  text-align: right;
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid #FAE534;
+  background-color: #FAE534;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  margin-top: 10px; /* Added margin-top for spacing */
+}
+button:hover{
+  background-color: #0ACB10;
+}
+.social-container {
+	margin: 10px 0;
+}
+
+.social-container a {
+	border: 1px solid #DDDDDD;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 40px;
+}
+
+.between{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+} 
+
+.already{
+  justify-content: center;
+}
+    /*CSS for login*/
+    .right-link{
+      color: #0acb10;
+  }
+  .already a{
+      color: #0acb10;
+  }
+/* Error message styling */
+.error-message {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #ff4d4d;
+  border-radius: 5px;
+  background-color: #ffe6e6;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.signup-succ-message {
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  display: none; /* Hide by default */
+}
+
+.signup-succ-message.success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.signup-succ-message.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+/* admin css */
+.admin-nav {
+  width: 250px;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+}
+
+
+.admin-nav::after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  right: -20px; /* Adjust position to place the line */
+  height: 90%;
+  width: 1px; /* Thickness of the line */
+  background-color: #66666671;
+}
+
+.admin-nav .logo {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.admin-nav .logo img {
+  max-width: 80%;
+  height: auto;
+}
+
+.admin-nav nav {
+  width: 100%;
+  flex-grow: 1;
+}
+
+.admin-nav ul {
+  list-style-type: none;
+  padding: 10px;
+  margin: 0;
+  width: 100%;
+}
+
+.admin-nav ul li {
+  width: 100%;
+}
+
+.admin-nav ul li a {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.admin-nav ul li a:hover {
+  background-color: #575757;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.admin-nav ul li a i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.admin-nav ul li a span {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .admin-nav {
+      width: 200px;
+  }
+}
+
+.profile {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+}
+
+.profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50% solid #333;
+}
+
+.contents {
+  float: right;
+  padding: 10px;
+  width: 100%;
+  max-width: 80%;
+  height: 100%;
+}
+
+.dashboard{
+  display: flex;
+}
+
+.metric {
+  margin: 40px;
+  padding: 10px;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  max-width: 200px;
+  background: #0acb10a8;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  top: 100px;
+}
+
+.metric-user{
+  background-color:#fae634c8;
+}
+.metric-contents{
+  background-color:#fae634c8;
+}
+
+.metric i {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.metric p span{
+  font-size: 20px;
+}
+
+/* User Management Css */
+
+    /* Container Styling */
+.user-management-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/* User Details Title */
+.user-management-title {
+  font-weight: 600;
+  color: #333;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+  /* Search and Filter Styling */
+  .user-management-search-filter {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+  }
+
+  .user-management-search-filter input,
+  .user-management-search-filter select {
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+  }
+
+  /* Table Styling */
+  .user-management-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+  }
+
+  .user-management-table th,
+  .user-management-table td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+  }
+
+  .user-management-table th {
+      background-color: #f4f4f4;
+      font-weight: bold;
+      color: #555;
+  }
+
+  /* Action Button Styling */
+  .user-management-view-btn {
+      background-color: #fdd835;
+      border: none;
+      color: #333;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+  }
+
+  .user-management-view-btn:hover {
+      background-color: #ffeb3b;
+  }
+
+/* User Details Section Styling */
+.user-management-details {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.user-management-back-btn {
+  background-color: #f7c600;
+  color: #333;
+  padding: 10px 20px;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  display: inline-block;
+}
+
+  .user-management-back-btn:hover {
+      background-color: #ffeb3b;
+  }
+
+  .user-management-details h2 {
+    font-size: 1.5rem;
+    color: #333;
+    border-bottom: 2px solid #f7c600;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  
+  #user-info {
+    margin-bottom: 20px;
+  }
+  
+  /* User Information Styling */
+  #user-info h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  #user-info p {
+    font-size: 1rem;
+    color: #666;
+    margin: 5px 0;
+  }
+  .user-management-section {
+    margin-top: 20px;
+}
+  
+.user-management-section h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+  /* Section Title (for User Reviews and Visited Places) */
+  .user-management-section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #f7c600;
+  }
+  
+  /* User Reviews and Visited Places Container */
+  #user-reviews div, #user-visited-places div {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #user-reviews p, #user-visited-places p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  .review-item, .visited-place-item {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.review-item p, .visited-place-item p {
+    margin: 5px 0;
+}
+  
+button.edit-review-btn, button.delete-review-btn {
+  background-color: #f7c600;
+  color: #333;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button.edit-review-btn:hover, button.delete-review-btn:hover {
+  background-color: #e0b500;
+}
+  
+  .edit-review-btn {
+    background-color: #f7c600;
+    color: #333;
+  }
+  
+  .edit-review-btn:hover {
+    background-color: #e0b500;
+  }
+  
+  .delete-review-btn {
+    background-color: #4caf50;
+    color: #fff;
+    margin-left: 10px;
+  }
+  
+  .delete-review-btn:hover {
+    background-color: #43a047;
+  }
+  
+  /* Styling for individual review and visited place entries */
+  [data-review-id] {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  #user-visited-places div {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+  }
+  
+  /* Highlight important information */
+  strong {
+    color: #333;
+  }
+
+
+/* General Modal Background */
+.announcement-manage-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+}
+
+/* Modal Content */
+.announce-modal-content {
+  background-color: #f9f9f9;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Form Styling */
+.announce-modal-content h2 {
+  text-align: center;
+  color: #333;
+}
+
+.announce-modal-content label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+.announce-modal-content input[type="text"],
+.announce-modal-content textarea,
+.announce-modal-content select,
+.announce-modal-content input[type="datetime-local"],
+.announce-modal-content input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.announce-modal-content input[type="radio"],
+.announce-modal-content input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.announce-modal-content button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.announce-modal-content button:hover {
+  background-color: #45a049;
+}
+
+
+/*Admin Contents Modal */
+
+.edit-contents-manage-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* On top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0,0,0,0.6); /* Black background with opacity */
+}
+.add-contents-manage-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* On top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0,0,0,0.6); /* Black background with opacity */
+}
+
+
+/*Admin.css*/
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Title */
+.container h1 {
+  font-weight: 600;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Search and Filter Styling */
+.content-management-search-filter {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+#content-search, #filter-category, #filter-price {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 200px;
+}
+
+#content-search {
+  width: 300px;
+}
+
+.primary-btn {
+  background-color: #f7c600;
+  color: #333;
+}
+
+.primary-btn:hover {
+  background-color: #e0b500;
+}
+
+#addContentBtn {
+  display: block;
+  margin: 20px auto;
+}
+
+/* Modal Overlay */
+.add-contents-manage-modal,
+.edit-contents-manage-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto; /* Allows scrolling for the entire modal if content overflows */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  max-height: 80vh; /* Limits the modal content height */
+  overflow-y: auto; /* Enables scrolling inside the modal content */
+  position: relative;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.checkbox-group label {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+
+
+/* Table Styling */
+.table-container {
+  margin-top: 20px;
+  overflow-y: auto;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.styled-table thead tr {
+  background-color: #4CAF50; /* Green background for headers */
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.styled-table tbody tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
+
+/* Actions */
+.styled-table .edit-content-btn,
+.styled-table .delete-content-btn {
+  background-color: #f7c600;
+  color: #333;
+  font-size: 0.85rem;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.styled-table .delete-content-btn {
+  background-color: #ff5c5c;
+}
+
+.styled-table img {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Analytics */
+
+.analytics-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #FFFFFF;
+}
+
+.most-added-places,
+.new-users-chart {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+h2 {
+  color: #000000;
+}
+
+.place-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.place-item {
+  padding: 8px;
+  border-bottom: 1px solid #555;
+  color: #000000;
+}
+
+.place-item:last-child {
+  border-bottom: none;
+}
+
+/* Container styling for the login history section */
+.login-history {
+  width: 90%; /* Adjust width as needed */
+  margin: 20px auto; /* Centering the container */
+  padding: 20px;
+  background-color: #f9f9f9; /* Light grey background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+  max-height: 400px;
+  position: relative;
+  text-align: center;
+  top: 100px;
+}
+
+/* Table styling */
+.login-table table {
+  width: 100%; /* Full width of its container */
+  border-collapse: collapse; /* Ensures borders are merged */
+  text-align: left;
+}
+
+.login-table {
+  display: block; /* Converts the table container to block to handle overflow */
+  max-height: 400px; /* Sets a maximum height with scrolling */
+  overflow-y: auto; /* Enables vertical scrolling */
+}
+/* Table header styling */
+.login-table th {
+  background-color: #4CAF50; /* Green background for headers */
+  color: white;
+  padding: 10px 15px;
+}
+
+/* Table row and data cell styling */
+.login-table td {
+  padding: 8px 15px;
+  border-bottom: 1px solid #ddd; /* Light grey border for separation */
+}
+
+/* Alternating row background colors for better readability */
+.login-table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Slightly darker than the table background */
+}
+
+/* Hover effect on rows for interactivity */
+.login-table tr:hover {
+  background-color: #e8f5e9; /* Light green background on hover */
+}
+
+.logout-button {
+  padding: 8px 16px;
+  background-color: #4CAF50; /* Red color for the logout button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: .9rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  bottom: 20px;
+}
+
+.logout-button:hover {
+  background-color: #c53727; /* Darker shade on hover */
+}
